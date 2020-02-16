@@ -3,7 +3,6 @@ const {src, dest} = require("gulp");
 const less = require("gulp-less");
 const minifyCSS = require("gulp-csso");
 const imagemin = require("gulp-imagemin");
-const htmlmin = require("gulp-htmlmin");
 const browserSync = require("browser-sync").create();
 
 function css() {
@@ -37,4 +36,4 @@ function watch(){
     gulp.watch("./*.html").on("change", browserSync.reload);
 }
 
-gulp.task('default', gulp.series(miniImg,css,minify,watch))
+gulp.task('default', gulp.series(miniImg,css,watch))
